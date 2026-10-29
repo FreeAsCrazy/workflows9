@@ -22,7 +22,7 @@ permissions:
 
 jobs:
   build:
-    uses: FreeAsCrazy/lmi-recovery1/.github/workflows/build-orangefox.yml@main
+    uses: FreeAsCrazy/lmi-recovery/.github/workflows/build-orangefox.yml@main
     with:
       fox_version: ${{ inputs.fox_version }}
       trim_profile: ${{ inputs.trim_profile }}
