@@ -1,8 +1,10 @@
 name: OrangeFox lmi
-run-name: OrangeFox 16.0 (lmi)
+run-name: OrangeFox 16.0 (lmi) [${{ github.event.client_payload.label || 'baseline' }}]
 
 on:
   workflow_dispatch:
+  repository_dispatch:
+    types: [trim-experiment]
 
 permissions:
   contents: read
@@ -10,3 +12,5 @@ permissions:
 jobs:
   build:
     uses: FreeAsCrazy/lmi-recovery/.github/workflows/build-orangefox.yml@main
+    with:
+      trim_extra: ${{ github.event.client_payload.trim_extra || '' }}
