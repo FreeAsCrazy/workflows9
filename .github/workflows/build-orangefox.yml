@@ -1,21 +1,8 @@
 name: OrangeFox lmi
-run-name: OrangeFox 16.0 (lmi) [${{ inputs.trim_profile }}]
+run-name: OrangeFox 16.0 (lmi)
 
 on:
   workflow_dispatch:
-    inputs:
-      fox_version:
-        description: "OrangeFox 版本"
-        required: true
-        default: "16.0"
-        type: choice
-        options:
-          - "16.0"
-      trim_profile:
-        description: "裁剪配置"
-        required: true
-        default: "baseline"
-        type: string
 
 permissions:
   contents: read
@@ -23,6 +10,3 @@ permissions:
 jobs:
   build:
     uses: FreeAsCrazy/lmi-recovery/.github/workflows/build-orangefox.yml@main
-    with:
-      fox_version: ${{ inputs.fox_version }}
-      trim_profile: ${{ inputs.trim_profile }}
