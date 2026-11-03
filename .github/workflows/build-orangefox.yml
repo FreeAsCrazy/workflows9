@@ -9,4 +9,4 @@ permissions:
 
 jobs:
   build:
-    uses: FreeAsCrazy/lmi-recovery/.github/workflows/build-orangefox.yml@main
+    uses: FreeAsCrazy/lmi-recovery/.github/workflows/build-orangefox.yml@custom
