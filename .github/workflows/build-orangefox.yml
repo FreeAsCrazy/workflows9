@@ -1,13 +1,8 @@
 name: OrangeFox lmi
-run-name: OrangeFox 16.0 (lmi) [${{ inputs.build_ref || github.ref_name }}]
+run-name: OrangeFox 16.0 (lmi) [${{ github.ref_name }}]
 
 on:
   workflow_dispatch:
-    inputs:
-      build_ref:
-        description: "要构建的设备树分支（留空则使用当前选择的分支）"
-        required: false
-        default: ""
 
 permissions:
   contents: write
@@ -15,5 +10,3 @@ permissions:
 jobs:
   build:
     uses: FreeAsCrazy/lmi-recovery/.github/workflows/build-orangefox.yml@main
-    with:
-      build_ref: ${{ inputs.build_ref || github.ref_name }}
